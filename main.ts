@@ -10,5 +10,5 @@ basic.forever(function () {
     180
     )
     basic.showNumber(derajat)
-    pins.servoWritePin(AnalogPin.P1, derajat)
+    servos.P2.setAngle(derajat)
 })
