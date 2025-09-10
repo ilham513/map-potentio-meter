@@ -1,14 +1,17 @@
-let resis = 0
-let derajat = 0
+let potentio = 0
+let volume = 0
+input.onButtonPressed(Button.A, function () {
+    music.play(music.builtinPlayableSoundEffect(soundExpression.happy), music.PlaybackMode.UntilDone)
+})
 basic.forever(function () {
-    resis = pins.analogReadPin(AnalogPin.P0)
-    derajat = pins.map(
-    resis,
+    potentio = pins.analogReadPin(AnalogPin.P0)
+    volume = pins.map(
+    potentio,
     0,
     1023,
     0,
-    180
+    255
     )
-    basic.showNumber(derajat)
-    servos.P2.setAngle(derajat)
+    basic.showNumber(volume)
+    music.setVolume(volume)
 })
